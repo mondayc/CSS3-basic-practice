@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS 溢出文本 | text overflow</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	.text-overflow-clip{
+		width: 100px;
+		padding: 10px;
+		border:1px solid #ccc;
+		text-overflow: clip;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.text-overflow-ellipsis{
+		width: 100px;
+		padding: 10px;
+		border:1px solid #ccc;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+	<div class="text-overflow-clip">
+		text-overflow:clip (溢出不显示省略标记)
+	</div>
+	<div class="text-overflow-ellipsis">
+		text-overflow:ellipsis (溢出不显示省略标记)
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS 博客列表</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="http://w3cplus.com/demo/css3/base.css",media="all">
+	<style type="text/css">
+	.block{
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 318px;
+		line-height: 20px;
+		border:1px solid #fc9;
+	}
+	.block ol{
+		padding-left: 23px;
+		width: 14em;
+		background: url(bg.png) no-repeat 2px 4px;
+	}
+	.block li{
+		clear: both;
+		margin:0;
+		padding: 0;
+		list-style: none outside none;
+	}
+	.block li a{
+		float: left;
+		display: inline;
+		max-width: 14em;
+		white-space: nowrap;/*为text-overflow 做准备，避免换行*/
+		overflow: hidden;/*为text-overflow 做准备，隐藏溢出文本*/
+		text-overflow: ellipsis;
+		color: #333;
+	}
+	.block li span{
+		float: right;
+		margin-right: -99px;
+		padding-left: 10px;
+		font-size: 10px;
+		color: #999;
+	}
+	</style>
+</head>
+<body>
+	<div class="block">
+	<h3>最新博文</h3>
+		<ol>
+			<li><a href="#">如何看待知乎上来自各行业的牛人</a><span>2016-04-21</span></li>
+			<li><a href="#">我发现了一个有趣的现象——在地铁上的</a><span>2016-04-21</span></li>
+			<li><a href="#">读余秋雨先生的千年一叹，让我想起了</a><span>2016-04-21</span></li>
+			<li><a href="#">我发现了一个有趣的现象——在地铁上的</a><span>2016-04-21</span></li>
+			<li><a href="#">不如说走就走：看看李志</a><span>2016-04-21</span></li>
+			<li><a href="#">如何看待知乎上来自各行业的牛人</a><span>2016-04-21</span></li>
+			<li><a href="#">读余秋雨先生的千年一叹，让我想起了</a><span>2016-04-21</span></li>
+			<li><a href="#">如何看待知乎上来自各行业的牛人</a><span>2016-04-21</span></li>
+			<li><a href="#">如何看待知乎上来自各行业的牛人</a><span>2016-04-21</span></li>
+			<li><a href="#">不如说走就走：看看李志</a><span>2016-04-21</span></li>
+
+		</ol>
+	</div>
+</body>
+</html>

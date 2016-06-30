@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>background chip</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	div{
+		width: 300px;
+		height: 200px;
+		border:20px dashed rgba(0,0,0,.3);
+		background: #abcd00 url(ff.png) no-repeat left top;
+		padding:20px;
+		margin: 30px;
+	}
+	.padding-box{
+		-webkit-background-clip:padding-box;
+		-moz-background-clip:padding-box;
+		-o-background-clip:padding-box;
+		-ms-background-clip:padding-box;
+		background-clip:padding-box;
+
+	}
+	.border-box{
+		-webkit-background-clip:border-box;
+		-moz-background-clip:border-box;
+		-o-background-clip:border-box;
+		-ms-background-clip:border-box;
+		background-clip:border-box;
+
+	}
+	.content-box{
+		-webkit-background-clip:content-box;
+		-moz-background-clip:content-box;
+		-o-background-clip:content-box;
+		-ms-background-clip:content-box;
+		background-clip:content-box;
+
+	}
+	/*--若将background-attachment 设置为 fixed，则这个属性没有任何作用--*/
+	.clip{
+		color: #fff;
+		font-size: 60px;
+		font-weight: bold;
+		-webkit-background-clip:text;
+		-webkit-text-fill-color:transparent;
+		/*-- 只支持webkit 浏览器--*/
+	}
+	</style>
+</head>
+<body>
+	<div class="padding-box"></div>
+	<div class="border-box"></div>
+	<div class="content-box"></div>
+	<!-- 背景图片填充文本效果 -->
+	<div class="clip">Background</div>
+</body>
+</html>

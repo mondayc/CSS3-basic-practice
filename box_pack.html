@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>box_pack 和 box_align</title>
+	<style type="text/css">
+	/*语法：start|end|center|justify*/
+	*{margin: 0;padding: 0}
+	.box{
+		width: 500px;
+		height: 200px;
+		margin: 10px;
+		border:1px solid #ccc;
+		font-size: 20px;
+		font-weight: bold;
+		color: #fff;
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+		-webkit-box-align:start;
+		-moz-box-align:start;
+		box-align:start;
+	}
+	h3{
+		margin:10px;
+	}
+	.box>div{
+		padding: 10px;
+	}
+	.box div:nth-child(1){
+		background-color: #305ed5;
+		line-height: 50px;
+	}
+	.box div:nth-child(2){
+		background-color: #306ed5;
+		line-height: 80px;
+	}
+	.box div:nth-child(3){
+		background-color: #307ed5;
+		line-height: 100px;
+	}
+	.box div:nth-child(4){
+		background-color: #308ed5;
+		line-height: 50px;
+	}
+	.box div:nth-child(5){
+		background-color: #309ed5;
+		line-height: 80px;
+	}
+	.box div:nth-child(6){
+		background-color: #30aed5;
+		line-height: 100px;
+	}
+	.box div:nth-child(7){
+		background-color: #30bed5;
+		line-height: 50px;
+	}
+	.box div:nth-child(8){
+		background-color: #30ced5;
+		line-height: 80px;
+	}
+	.box-pack-start{
+		-webkit-box-pack:start;
+		-moz-box-pack:start;
+		box-pack:start;
+	}
+	.box-pack-end{
+		-webkit-box-pack:end;
+		-moz-box-pack:end;
+		box-pack:end;
+	}
+	.box-pack-center{
+		-webkit-box-pack:center;
+		-moz-box-pack:center;
+		box-pack:center;
+	}
+	.box-pack-justify{
+		-webkit-box-pack:justify;
+		-moz-box-pack:justify;
+		box-pack:justify;
+	}
+	.box-align-end{
+		-webkit-box-align:end;
+		-moz-box-align:end;
+		box-align:end;
+	}
+	.box-align-baseline{
+		-webkit-box-align:baseline;
+		-moz-box-align:baseline;
+		box-align:baseline;
+	}
+	.box-align-center{
+		-webkit-box-align:center;
+		-moz-box-align:center;
+		box-align:center;
+	}
+	.box-align-stretch{
+		-webkit-box-align:stretch;
+		-moz-box-align:stretch;
+		box-align:stretch;
+	}
+	</style>
+</head>
+<body>
+	<h3> box-pack-start</h3>
+	<div class="box box-pack-start">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-start; box-align-end</h3>
+	<div class="box box-pack-start box-align-end">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-end</h3>
+	<div class="box box-pack-end">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-end; box-align-center</h3>
+	<div class="box box-pack-end box-align-center">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-center</h3>
+	<div class="box box-pack-center">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-center; box-align-baseline</h3>
+	<div class="box box-pack-center box-align-baseline">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-justify</h3>
+	<div class="box box-pack-justify">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+	<h3> box-pack-justify; box-align-stretch</h3>
+	<div class="box box-pack-justify box-align-stretch">
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+		<div>D</div>
+		<div>E</div>
+		<div>F</div>
+		<div>G</div>
+		<div>H</div>
+	</div>
+</body>
+</html>
