@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>transform 3D</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		margin: 20px auto;
+		height: 200px;
+		width: 800px;
+	}
+	div:nth-of-type(1){
+		background-color: #666;
+	}
+	div:nth-of-type(2){
+		background-color: #888;
+	}
+	div:nth-of-type(3){
+		background-color: #aaa;
+	}
+	div{
+		text-align: center;
+		vertical-align: center;
+		line-height: 200px;
+	}
+	@keyframes spin{
+		0%{
+			transform:rotateY(0deg);
+		}
+		100%{
+			transform:rotateY(360deg);
+		}
+	}
+	.preserve-3d{
+		transform-style: preserve-3d;
+	}
+	.preserve-3d:hover{
+		animation: spin 5s linear infinite;
+	}
+	.rotate{
+		transform:perspective(300px) rotateY(45deg);
+	}
+	.rotate img{
+		transform: rotateX(15deg) translateZ(20px);
+		transform-origin: 0 0 40px;
+	}
+	.three-d{
+		perspective:500px;
+	}
+	.three-d img{
+		transform-origin: bottom;
+		transform:rotateX(45deg);
+	}
+	</style>
+</head>
+<body>
+	<div class="preserve-3d">
+		<img src="poker/25.jpg">
+	</div>
+	<div class="rotate">
+		<img src="poker/26.jpg">
+	</div>
+	<div class="three-d">
+		<img src="poker/27.jpg">
+	</div>
+</body>
+</html>
