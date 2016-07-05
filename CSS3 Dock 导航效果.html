@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dock Dock</title>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		font:normal 14px,Helvetica,Arial,Sans-Serif;
+		background: rgb(30,30,30);
+		color: rgb(220,220,220);
+		margin: 50px auto;
+	}
+	.content{
+		position: relative;
+		width: 660px;
+		height: 340px;
+		overflow: hidden;
+		background-color: #333;
+		border-radius: 10px;
+		box-shadow: 0 1px 10px rgb(10,10,10);
+		margin: 100px auto;
+	}
+	h1{
+		margin-top: 1.5em;
+		color: rgba(255,255,255,.9);
+		line-height: 1;
+		font-size: 25px;
+		text-align: center;
+		font-weight: bold;
+		cursor: default;
+	}
+	.dock{
+		position: absolute;
+		bottom: 0;
+		z-index: 10;
+		width: 100%;
+		text-align: center;
+		font:normal 14px ,Arial,Sans-Serif;
+	}
+	.dock ul{
+		position: relative;
+		display: inline-block;
+		padding: 0 5px;
+		margin: 0;
+	}
+	.dock li{
+		display: inline-block;
+		position: relative;
+		margin: 0 1px;
+		margin-bottom: 15px;
+		vertical-align: baseline;
+		-webkit-box-reflect:below -16px -webkit-gradient(
+			linear,left top,left bottom,from(transparent),color-stop(91%,rgba(255,255,255,.1)),
+			color-stop(91.01%,transparent),to(transparent));
+		}
+	}
+	.dock a{
+		display: inline-block;
+		text-decoration: none;
+		cursor: default;
+		outline: none;
+	}
+	.dock a img{
+		width: 50px;
+	}
+	.dock a em{
+		font-size: .29em;
+		font-style: normal;
+		vertical-align: top;
+		padding-top: .46em;
+		position: absolute;
+		top: -34px;
+		left: 50%;
+		display: none;
+		width: 150px;
+		margin-left: -75px;
+		text-align: center;
+	}
+	.dock a em:after{
+		content: " ";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -6px;
+		width: 0;
+		height: 0;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 6px solid rgba(0,0,0,.6);
+		border-bottom: none;
+	}
+	.dock a em span{
+		display: inline-block;
+		padding: 5px 12px;
+		font-size: 14px;
+		font-style: normal;
+		color: #fff;
+		background: #000;
+		background: rgba(0,0,0,.6);
+		text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+		border-radius: 5px;
+	}
+	.dock li:hover em,
+	.dock li a:focus em{
+		display: block;
+	}
+	.dock li:hover img,
+	.dock li a:focus img{
+		width: 106px;
+	}
+	.dock li:active img{
+		opacity: .9;
+	}
+	.dock a img{
+		width: 76px;
+		height: auto;
+		border:none;
+		-webkit-transition:width .2s,height .2s;
+		-moz-transition:width .2s,height .2s;
+		-o-transotion:width .2s,height .2s;
+		-ms-transition:width .2s,height .2s;
+		transition:width .2s,height .2s;
+	}
+	/* 点击后上下跳动 */
+	@-webkit-keyframes bounce{
+		0%{-webkit-transform:translateY(0);}
+		100%{-webkit-transform:translateY(-20px);}
+	}
+	@-moz-keyframes bounce{
+		0%{-moz-transform:translateY(0);}
+		100%{-moz-transform:translateY(-20px);}
+	}
+	@-o-keyframes bounce{
+		0%{-o-transform:translateY(0);}
+		100%{-o-transform:translateY(-20px);}
+	}
+	@-ms-keyframes bounce{
+		0%{-ms-transform:translateY(0);}
+		100%{-ms-transform:translateY(-20px);}
+	}
+	@keyframes bounce{
+		0%{transform:translateY(0);}
+		100%{transform:translateY(-20px);}
+	}
+	/* 用户点击导航时触发bounce 动画 */
+	.dock li:target a{
+		-webkit-animation:bounce .3s 6 alternate ease-out;
+		-moz-animation:bounce .3s 6 alternate ease-out;
+		-o-animation:bounce .3s 6 alternate ease-out;
+		-ms-animation:bounce .3s 6 alternate ease-out;
+		animation:bounce .3s 6 alternate ease-out;
+	}
+	/* 通过伪类“：after”给点击的导航底部添加一个圆点 */
+	.dock li:after{
+		content: " ";
+		position: absolute;
+		bottom: -5px;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		opacity: 0;
+		visibility: hidden;
+		background-color: rgba(255,255,255,.8);
+		margin-left: -2px;
+		border-radius: 5px;
+		box-shadow: inset 0 1px 3px rgba(75,255,255,.4),
+		0 0 4px rgba(75,255,255,.5),
+		0 -1px 7px rgb(75,255,255);
+		-webkit-transition:opacity .5s;
+		-moz-transition:opacity .5s;
+		-o-transition:opacity .5s;
+		-ms-transition:opacity .5s;
+		transition:opacity .5s;
+
+	}
+		/* 点击后上下跳动 */
+	/* dock 底部背景 */
+	.dock-container{
+		-webkit-transform-style:preserve-3d;
+		-moz-transform-style:preserve-3d;
+		-o-transform-style:preserve-3d;
+		-ms-transform-style:preserve-3d;
+		transform-style:preserve-3d;
+	}
+	.dock-panel{
+		width: 560px;
+		height: 100px;
+		border-radius: 5px;
+		background: -webkit-linear-gradient(to bottom,#eee 0%,#eee 28%,#bbb 51%,#bbb 100%);
+		background: linear-gradient(to bottom,#eee 0%,#eee 28%,#bbb 51%,#bbb 100%);
+		-webkit-backface-visibility:visible;
+		-moz-backface-visibility:visible;
+		-o-backface-visibility:visible;
+		-ms-backface-visibility:visible;
+		backface-visibility:visible;
+		-webkit-transform-origin:50% 50%;
+		-moz-transform-origin:50% 50%;
+		-o-transform-origin:50% 50%;
+		-ms-transform-origin:50% 50%;
+		transform-origin:50% 50%;
+		-webkit-transform:perspective(800px) rotate3d(1,0,0,50deg);
+		-moz-transform:perspective(800px) rotate3d(1,0,0,50deg);
+		-o-transform:perspective(800px) rotate3d(1,0,0,50deg);
+		-ms-transform:perspective(800px) rotate3d(1,0,0,50deg);
+		transform:perspective(800px) rotate3d(1,0,0,50deg);
+		position: relative;
+		left: 50%;
+		margin-left: -280px;
+		bottom: -193px;
+	}
+	/* dock 底部背景 */
+	#des{
+		padding-left: 50px;
+		line-height: 1.5em;
+	}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h1>Mac OS X Lion</h1>
+		<div class="dock">
+			<ul>
+				<li id="mail">
+				<a href="#mail">
+					<em><span>Mail</span></em>
+					<img src="poker/Mail.png" alt="Mail">
+				</a>
+				</li>
+				<li id="ical">
+				<a href="#ical">
+					<em><span>iCal</span></em>
+					<img src="poker/iCal.png" alt="iCal">
+				</a>
+				</li>
+				<li id="iphoto">
+				<a href="#iphoto">
+					<em><span>iPhoto</span></em>
+					<img src="poker/iPhoto.png" alt="iPhoto">
+				</a>
+				</li>
+				<li id="finder">
+				<a href="#finder">
+					<em><span>Finder</span></em>
+					<img src="poker/Finder.png" alt="Finder">
+				</a>
+				</li>
+				<li id="trash">
+				<a href="#trash">
+					<em><span>Trash</span></em>
+					<img src="poker/trash.png" alt="Trash">
+				</a>
+				</li>
+			</ul>
+		</div>
+		<div class="dock-container">
+			<div class="dock-panel"></div>
+		</div>
+	</div>
+	<div id="des">
+		主要效果：<br />
+		1. 导航项目水平排列居中显示，并有翻转的倒影效果<br />
+		2. 导航项被点击之后会有一个上下弹跳，并且底部有一个高亮远点显示，表示当前导航项已经被点击<br />
+		3. 用户鼠标悬浮在导航项上时，会有一个tips 的提示效果，同时导航项图片具有放大效果<br />
+		4. 所有导航项目放置在一个面板上
+	</div>
+</body>
+</html>
