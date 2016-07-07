@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		box-shadow
+	</title>
+	<style type="text/css">
+		.box-shadow{
+			width: 200px;
+			height: 100px;
+			border-radius: 5px;
+			border:1px solid #ccc;
+			margin: 20px;
+		}
+		.top{
+			box-shadow: 0 -2px 5px -3px red;
+		}
+		.right{
+			box-shadow: 2px 0 10px -3px green;
+		}
+		.bottom{
+			box-shadow: 0 2px 20px -3px blue;
+		}
+		.left{
+			box-shadow: 0 0 0 10px orange;
+		}
+		/*
+		box-shadow:none | [inset x-offset y-offset blur-radius spread-radius color],[inset x-offset y-offset blur-radius spread-radius color]
+		可以同时使用多个投影，此时需用逗号隔开
+
+
+		box-shadow: 0 0 0 10px; 的效果等效于边框，但这个边框不占空间，不会影响box 的外边框值
+		*/
+	</style>
+</head>
+<body>
+	<div class="box-shadow top"></div>
+	<div class="box-shadow right"></div>
+	<div class="box-shadow bottom"></div>
+	<div class="box-shadow left"></div>
+
+</body>
+</html>

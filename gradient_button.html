@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS button gradient</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<style type="text/css">
+	@import url('http://fonts.googleapis.com/css?family=Arvo');
+	/*加载 Google web 字体*/
+	body{
+		background: #f8fcd4;
+		background: -webkit-linear-gradient(to bottom,#f8fcd4 19%,#dbfacb 100%);
+		background: linear-gradient(to bottom,#f8fcd4 19%,#dbfacb 100%);
+		background-attachment: fixed;
+	}
+	body >div{
+		text-align: center;
+		display: block;
+		width: 800px;
+		margin: 50px auto;
+	}
+	body div:nth-child(2){
+		text-align: center;
+		display: block;
+		width: 800px;
+		margin: 10px auto;
+	}
+	/*加载本地字体图标*/
+/*	@font-face{
+		font-family: 'EntypoRegular';
+		src:url('fonts/entypo_webfont.eot');
+		src:url('fonts/entypo_webfont.woff') format('woff');
+		src:url('fonts/entypo_webfont.svg') format('svg');
+		src:url('fonts/entypo_webfont.ttf') format('turetype');
+		font-weight: normal;
+		font-style: normal;
+	}*/
+	/*设置按钮基本样式*/
+	.button,.button-bevel{
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 13px;
+		color: #fff;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+		padding: 7px 20px 9px;
+		margin: .5em .5em .5em 0;
+		cursor: pointer;
+		text-shadow: 0 1px 1px rgba(0,0,0,.4);
+		text-transform: capitalize;
+		transition: .1s linear;
+	}
+	.button{
+		border-radius: 2px;
+		box-shadow: inset rgba(255,255,255,.3) 1px 1px 0;
+	}
+	.button:hover,.button-bevel:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+	.button:active{
+		box-shadow: inset rgba(0,0,0,.4) 0px 0px 6px;
+	}
+	.rounded{
+		border-radius: 20px;
+	}
+	.orange{
+		background: rgb(255,183,0);
+		background: -webkit-linear-gradient(to bottom,rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
+		background: linear-gradient(to bottom,rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
+		border:1px solid #e59500;
+	}
+	.orange:hover{
+		background: rgb(255,203,72);
+		background: -webkit-linear-gradient(to bottom,rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
+		background: linear-gradient(to bottom,rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
+	}
+	.button-bevel{
+		vertical-align: top;
+		border-radius: 4px;
+		border:none;
+		padding: 10px 25px 12px;
+	}
+	.button-bevel:active{
+		position: relative;
+		top: 5px;
+	}
+	.button-bevel.orange{
+		box-shadow: #c46d00 0 6px 0px,rgba(0,0,0,.3) 0 10px 3px;
+	}
+	.button-bevel.orange:active{
+		box-shadow: #c46d00 0 3px 0px,rgba(0,0,0,.2) 0 6px 3px;
+	}
+	/**/
+	.green{
+		background: rgb(136,232,53);
+		background: -webkit-linear-gradient(to bottom,rgba(136,232,53,1) 0%,rgba(124,212,68,1) 100%);
+		background: linear-gradient(to bottom,rgba(136,232,53,1) 0%,rgba(124,212,68,1) 100%);
+		border:1px solid #91BA20;
+	}
+	.green:hover{
+		background: rgb(149,232,69);
+		background: -webkit-linear-gradient(to bottom,rgba(149,232,69,1) 0%,rgba(149,124,53,1) 100%);
+		background: linear-gradient(to bottom,rgba(149,255,69,1) 0%,rgba(149,210,72,1) 100%);
+	}
+	.button-bevel{
+		vertical-align: top;
+		border-radius: 4px;
+		border:none;
+		padding: 10px 25px 12px;
+	}
+	.button-bevel.green{
+		box-shadow: #61962D 0 6px 0px,rgba(0,0,0,.3) 0 10px 3px;
+	}
+	.button-bevel.green:active{
+		box-shadow: #61962D 0 3px 0px,rgba(0,0,0,.2) 0 6px 3px;
+	}
+	.button-bevel span {
+		font-size: 14px;
+		padding-right: 5px;
+		font-weight: normal;
+		line-height: 0;
+		margin-left: .1em;
+	}
+
+	</style>
+</head>
+<body>
+<div data-for="beveled">
+	<div>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-refresh"></span>Refresh
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-reply"></span>Reply
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-calendar"></span>Calendar
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-paper-plane"></span>Plane
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-wifi"></span>Wifi
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-location-arrow"></span>Locator
+		</a>
+	</div>
+	<div>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-refresh"></span>Refresh
+		</a>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-reply"></span>Reply
+		</a>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-calendar"></span>Calendar
+		</a>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-paper-plane"></span>Plane
+		</a>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-wifi"></span>Wifi
+		</a>
+		<a href="#" class="button-bevel green">
+			<span class="fa fa-location-arrow"></span>Locator
+		</a>
+	</div>
+</div>
+</body>
+</html>

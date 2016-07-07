@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>backface-visible</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.stage{
+		width: 100px;
+		height: 150px;
+		float: left;
+		border:1px dotted orange;
+		position: relative;
+		margin: 20px;
+		border-radius: 8px;
+		perspective:1000;
+	}
+	.container{
+		width: 102px;
+		height: 142px;
+		position: relative;
+		transition: .5s;
+		transform-style: preserve-3d;
+	}
+	.card{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		backface-visibility: hidden;
+	}
+	.front{
+		background: url(poker/3.jpg) no-repeat center/100% 100%;
+		z-index: 2;
+	}
+	.back{
+		background: url(poker/back.png) no-repeat center/100% 100%;
+		transform: rotateY(180deg);
+	}
+	.stage:nth-child(1) .container{
+		transform: rotateY(0deg);
+	}
+	.stage:nth-child(2) .container{
+		transform: rotateY(30deg);
+	}
+	.stage:nth-child(3) .container{
+		transform: rotateY(60deg);
+	}
+	.stage:nth-child(4) .container{
+		transform: rotateY(90deg);
+	}
+	.stage:nth-child(5) .container{
+		transform: rotateY(120deg);
+	}
+	.stage:nth-child(6) .container{
+		transform: rotateY(150deg);
+	}
+	.stage:nth-child(7) .container{
+		transform: rotateY(180deg);
+	}
+	.move{
+		clear: both;
+		margin: 20px;
+	}
+	.move img{
+		position: absolute;
+
+	}
+	.move img:nth-child(1){
+		opacity: .5;
+		z-index: 1;
+	}
+	.move img:nth-child(2){
+		opacity: 1;
+		z-index: 2;
+		transform: translate(150px,0);
+	}
+	</style>
+</head>
+<body>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="stage">
+		<div class="container">
+			<div class="card front"></div>
+			<div class="card back"></div>
+		</div>
+	</div>
+	<div class="move">
+		<img src="poker/1.jpg">
+		<img src="poker/2.jpg">
+	</div>
+</body>
+</html>

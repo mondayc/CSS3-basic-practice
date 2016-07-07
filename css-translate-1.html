@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS button gradient</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<style type="text/css">
+	body{
+		background: #f8fcd4;
+	}
+	body >div{
+		text-align: center;
+		display: block;
+		width: 800px;
+		margin: 50px auto;
+	}
+	.button-bevel{
+		font-size: 13px;
+		color: #fff;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+		margin: .5em 2em .5em 0;
+		cursor: pointer;
+		text-shadow: 0 1px 1px rgba(0,0,0,.4);
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		border:none;
+		transition: all 0.4s ease-in-out;
+	}
+	.button:active{
+		box-shadow: inset rgba(0,0,0,.4) 0px 0px 6px;
+	}
+	.button-bevel:hover{
+		color: #fff;
+		text-decoration: none;
+		transform: rotate(360deg) scale(1.5);
+	}
+	.orange{
+		background: rgb(255,183,0);
+	}
+	.orange:hover{
+		background: rgb(255,203,72);
+	}
+	div .button-bevel:nth-child(2){
+		background: #abcd00;
+	}
+	div .button-bevel:nth-child(2):hover{
+		background: #abdd00;
+		transform: rotate(360deg) scale(.7);
+	}
+	div .button-bevel:nth-child(3):hover{
+		transform: rotate(-360deg) scale(1.5);
+	}
+	.button-bevel span {
+		font-size: 20px;
+		font-weight: normal;
+		line-height: 100px;
+		margin-left: .1em;
+		vertical-align: middle;
+	}
+
+	</style>
+</head>
+<body>
+<div data-for="beveled">
+	<div>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-refresh"></span>
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-reply"></span>
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-calendar"></span>
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-paper-plane"></span>
+		</a>
+		<a href="#" class="button-bevel orange">
+			<span class="fa fa-wifi"></span>
+		</a>
+
+	</div>
+
+</div>
+</body>
+</html>

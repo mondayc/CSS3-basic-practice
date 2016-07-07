@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>perspective cube</title>
+	<style type="text/css">
+	.wrapper{
+		width: 50%;
+		float: left;
+		padding-bottom: 8em;
+	}
+	.cube{
+		font-size: 4em;
+		width: 2em;
+		margin:1.5em auto;
+		transform-style: preserve-3d;
+		transform: rotateX(-40deg) rotateY(32deg);
+	}
+	.side{
+		position: absolute;
+		width: 2em;
+		height: 2em;
+		background: rgba(255,99,71,.6);
+		border:1px solid rgba(0,0,0,.5);
+		color: white;
+		text-align: center;
+		line-height: 2em;
+	}
+	.front{
+		transform: translateZ(1em);
+	}
+	.top{
+		transform: rotateX(90deg) translateZ(1em);
+	}
+	.right{
+		transform:rotateY(90deg) translateZ(1em);
+	}
+	.left{
+		transform: rotateY(-90deg) translateZ(1em);
+	}
+	.back{
+		transform: translateZ(-1em);
+	}
+	.bottom{
+		transform: rotateX(90deg) translateZ(-1em);
+	}
+	.w2{
+		perspective:1000px;
+	}
+	.w1{
+		perspective:100px;
+	}
+
+	.wrapper1{
+		width: 30%;
+		display: inline-block;
+		padding-bottom: 8em;
+	}
+	.cube-1{
+		font-size:2em;
+		width: 2em;
+		height: 2em;
+		margin: .5em auto;
+		transform-style: preserve-3d;
+		perspective:250px;
+	}
+	.cube1{
+		perspective-origin:top left;
+	}
+	.cube2{
+		perspective-origin:top;
+	}
+	.cube3{
+		perspective-origin:top right;
+	}
+	.cube4{
+		perspective-origin:left;
+	}
+	.cube5{
+		perspective-origin:center;
+	}
+	.cube6{
+		perspective-origin:right;
+	}
+	.cube7{
+		perspective-origin:bottom left;
+	}
+	.cube8{
+		perspective-origin:bottom;
+	}
+	.cube9{
+		perspective-origin:bottom right;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper w2">
+	<div class="cube">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper w1">
+	<div class="cube">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+
+<div class="wrapper1">
+	<div class="cube-1 cube1">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube2">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube3">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube4">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube5">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube6">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube7">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube8">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+<div class="wrapper1">
+	<div class="cube-1 cube9">
+		<div class="side front">1</div>
+		<div class="side back">2</div>
+		<div class="side right">3</div>
+		<div class="side left">4</div>
+		<div class="side top">5</div>
+		<div class="side bottom">6</div>
+	</div>
+</div>
+</body>
+</html>

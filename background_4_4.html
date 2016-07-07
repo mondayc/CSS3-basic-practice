@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>background 全屏</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		background: #000 url(bg.jpg) center center fixed no-repeat;
+		-moz-background-size:cover;
+		-webkit-background-size:cover;
+		-o-background-size:cover;
+		background-size:cover;
+	}
+	@media only all and (max-width: 1024px) and(max-height: 768px){
+	body{
+		-moz-background-size:1024px 768px;
+		-webkit-background-size:1024px 768px;
+		-o-background-size:1024px 768px;
+		background-size:1024px 768px;
+	}
+	}
+	@media only all and (max-width: 640px) and(max-height: 480px){
+	body{
+		-moz-background-size:640px 480px;
+		-webkit-background-size:640px 480px;
+		-o-background-size:640px 480px;
+		background-size:640px 480px;
+	}
+	}
+	</style>
+</head>
+<body>
+</body>
+</html>

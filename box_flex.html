@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>box_flex</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+	body{
+		color: #fff;
+		font-size: 20px;
+	}
+	.box-flex{
+		width: 480px;
+		background: gray;
+		margin: 100px;
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+	}
+	.box-flex p:nth-child(1){
+		background: green;
+		box-flex:1;
+		-moz-box-flex:1;
+		-webkit-box-flex:1;
+	}
+	.box-flex p:nth-child(2){
+		background: orange;
+		box-flex:3;
+		-webkit-box-flex:3;
+		-moz-box-flex:3;
+	}
+	</style>
+</head>
+<body>
+	<div class="box-flex">
+		<p>I'm a green flex item</p>
+		<p>I'm a green flex item</p>
+	</div>
+</body>
+</html>
