@@ -139,16 +139,12 @@
 		0%{-o-transform:translateY(0);}
 		100%{-o-transform:translateY(-20px);}
 	}
-	@-ms-keyframes bounce{
-		0%{-ms-transform:translateY(0);}
-		100%{-ms-transform:translateY(-20px);}
-	}
 	@keyframes bounce{
 		0%{transform:translateY(0);}
 		100%{transform:translateY(-20px);}
 	}
 	/* 用户点击导航时触发bounce 动画 */
-	.dock li:target a{
+	.dock li:target {
 		-webkit-animation:bounce .3s 6 alternate ease-out;
 		-moz-animation:bounce .3s 6 alternate ease-out;
 		-o-animation:bounce .3s 6 alternate ease-out;
@@ -156,21 +152,21 @@
 		animation:bounce .3s 6 alternate ease-out;
 	}
 	/* 通过伪类“：after”给点击的导航底部添加一个圆点 */
-	.dock li:after{
+	.dock li:target:after{
 		content: " ";
 		position: absolute;
-		bottom: -5px;
+		bottom: -8px;
 		left: 50%;
 		width: 5px;
 		height: 5px;
-		opacity: 0;
-		visibility: hidden;
+		opacity: .5;
+		/*visibility: hidden;*/
 		background-color: rgba(255,255,255,.8);
 		margin-left: -2px;
 		border-radius: 5px;
-		box-shadow: inset 0 1px 3px rgba(75,255,255,.4),
+		/*box-shadow: inset 0 1px 3px rgba(75,255,255,.4),
 		0 0 4px rgba(75,255,255,.5),
-		0 -1px 7px rgb(75,255,255);
+		0 -1px 7px rgb(75,255,255);*/
 		-webkit-transition:opacity .5s;
 		-moz-transition:opacity .5s;
 		-o-transition:opacity .5s;
