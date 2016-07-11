@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Canvas 热点图</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#heatMap{
+		background: url('bgtest.png') left top no-repeat;
+		background-size: 100%;
+		box-shadow: 1px 1px 10px 1px rgba(0,0,0,.5);
+		height: 768px;
+		width: 1024px;
+	}
+	div{
+		width: 1024px;
+		margin: 20px auto;
+	}
+	h2{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	button{
+		margin-top:10px;
+		float: right;
+		padding: 8px 20px;
+		background-color: #4cbdfe;
+		color: #fff;
+		box-shadow: 1px 1px 5px 1px rgba(0,0,0,.5);
+		border: none;
+		clear: both;
+		outline: none;
+	}
+	button:hover{
+		background-color: #abcd00;
+		text-decoration: none;
+	}
+	button:active{
+		background-color: #87cd00;
+		text-decoration: none;
+	}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<h2>Heat Map</h2>
+		<canvas id="heatMap" class="clear"></canvas>
+		<button id="resetButton">Reset</button>
+	</div>
+	
+	
+	<script type="text/javascript">
+		var points = {};
+		var scale = 3;
+		var x = -1;
+		var y = -1;
+
+		// 鼠标移动或每隔 100ms ，调用并显示效果
+		function loadDemo(){
+			document.getElementById('resetButton').onclick = reset;
+
+			canvas = document.getElementById('heatMap');
+			canvas.width = 1024;
+			canvas.height = 768;
+			context = canvas.getContext('2d');
+
+			context.globalAlpha = 0.2;// 设置高透明值
+			context.globalCompositeOperation = "lighter";// 显示源图像 + 目标图像
+
+			// 每隔100ms 
+			function sample(){
+				if(x != 1){
+					addToPoint(x,y)
+				}
+				setTimeout(sample,100);
+			}
+
+			//  鼠标移动
+			canvas.onmousemove = function(e){
+				x = e.clientX - e.target.offsetLeft;
+				y = e.clientY - e.target.offsetTop;
+				addToPoint(x,y);
+			}
+			sample();
+		}
+
+		// 使用canvas 的clearRect 函数可将整个canvas 区域清空重置
+		function reset(){
+			points = {};
+			context.clearRect(0,0,1024,768);
+			x = -1;
+			y = -1;
+		}
+
+		// 建立颜色查找表，以便在canvas 上执行绘制操作时使用
+		// Math.floor() 取最接近的整数
+		function getColor(intensity){
+			var colors = ["#3A2B90","#5ECCDE","#5EDE7A","#C5DE5E","#EEA43E","#fad237"];
+			return colors[Math.floor(intensity/2)];
+		}
+
+		function drawPoint(x,y,radius){
+			context.fillStyle = getColor(radius);
+			radius = Math.sqrt(radius)*2;
+
+			context.beginPath();
+			context.arc(x,y,radius,0,Math.PI*2,true);//context.arc 函数根据特定的半径值绘制圆
+
+			context.closePath();
+			context.fill();
+		}
+
+		// 鼠标移动或悬停时调用addToPoint，canvas 上特定点的热度值会升高并保存下来。
+		function addToPoint(x,y){
+			x = Math.floor(x/scale);
+			y = Math.floor(y/scale);
+
+			if (!points[[x,y]]) {
+				points[[x,y]] = 1;
+			}
+			// 最高温度值是 10
+			else if(points[[x,y]]==10){
+				return
+			}
+			else{
+				points[[x,y]]++;
+			}
+			// 给定像素点的当前热度值一旦被检测到，像素位置、热度和半径值传给drawPoint
+			drawPoint(x*scale,y*scale,points[[x,y]]);
+		}
+		window.addEventListener("load",loadDemo,true);
+	</script>
+</body>
+</html>
+
+<!-- 小结：低级错误！！！ 
+canvas.width = 1024;
+canvas.height = 768;
+一开始忘改画布大小了，所有都错位了。。。。。折腾了好久
+-->
