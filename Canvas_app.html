@@ -12,11 +12,11 @@
 		background: url('bgtest.png') left top no-repeat;
 		background-size: 100%;
 		box-shadow: 1px 1px 10px 1px rgba(0,0,0,.5);
-		height: 700px;
-		width: 1024px;
+		height: 600px;
+		width: 800px;
 	}
 	div{
-		width: 1024px;
+		width: 800px;
 		margin: 20px auto;
 	}
 	h2{
@@ -64,8 +64,8 @@
 			document.getElementById('resetButton').onclick = reset;
 
 			canvas = document.getElementById('heatMap');
-			canvas.width = 1024;
-			canvas.height = 700;
+			canvas.width = 800;
+			canvas.height = 600;
 			context = canvas.getContext('2d');
 
 			context.globalAlpha = 0.2;// 设置高透明值
@@ -91,7 +91,7 @@
 		// 使用canvas 的clearRect 函数可将整个canvas 区域清空重置
 		function reset(){
 			points = {};
-			context.clearRect(0,0,1024,700);
+			context.clearRect(0,0,800,600);
 			x = -1;
 			y = -1;
 		}
@@ -136,9 +136,3 @@
 	</script>
 </body>
 </html>
-
-<!-- 小结：低级错误！！！ 
-canvas.width = 1024;
-canvas.height = 768;
-一开始忘改画布大小了，所有都错位了。。。。。折腾了好久
--->
